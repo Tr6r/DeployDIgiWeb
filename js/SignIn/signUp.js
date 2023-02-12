@@ -3,6 +3,32 @@ var replace_email;
 var count;
 var validate,checkEmail;
 var Hour;
+var OTP;
+const serviceID = "service_llvpnwi";
+const templateID = "template_njqzjob";
+function sendEmail()
+{
+    OTP = RandomOTP();
+    var params = {
+        name : "DigiTechnology",
+        email: document.getElementById("txtEmail").value,
+        message : OTP,
+    }
+    emailjs.send(serviceID,templateID,params).then((res) =>{
+        alert("Thanh cong");
+    }) 
+    .catch((err) => console.log(err));
+}
+function RandomOTP() {
+
+	var uniquechar = "";
+	const randomchar = "0123456789";
+	for (let i = 1; i < 7; i++) {
+		uniquechar += randomchar.charAt(
+			Math.random() * randomchar.length)
+	}
+	return uniquechar;
+}
 function generateUUID() { // Public Domain/MIT
     var d = new Date().getTime();//Timestamp
     var d2 = ((typeof performance !== 'undefined') && performance.now && (performance.now()*1000)) || 0;//Time in microseconds since page-load or 0 if unsupported
@@ -17,9 +43,10 @@ function generateUUID() { // Public Domain/MIT
         }
         return (c === 'x' ? r : (r & 0x3 | 0x8)).toString(16);
     });
-}
+}   
 function printmsg()
 {
+    sendEmail();
     searchByEmail();
     var date = new Date();
     var month =date.getFullYear()+ "-" +(date.getMonth()+1) +"-" +(date.getDate());
@@ -43,16 +70,16 @@ function printmsg()
             UID_Main_Account: null,
             Is_Beneficiary_Account: "n",
             Status: "chua kich hoat",
-            Purchase_Date: "2023-2-8 15:1:07",
+            Purchase_Date: null,
             Date:  month +" "+time,
             Users: [],
             User1: null
         }
-        // alert('Tao thanh cong');
-         addNew(newHuman);
+
+        //  addNew(newHuman);
     }
 }
-      , 1000);
+      , 1500);
 };
 function Hour_nose()
 {
@@ -88,43 +115,43 @@ function checkValidate() {
 
         if(document.getElementById("txtEmail").value == "")
     {
-        alert("chua nhap email");
+        document.getElementById("txtNote").innerHTML = "*Please enter your email";
         validate =  false;
     }
     else if (atpos < 1 || ( dotpos - atpos < 2 )) {
-        alert("Please enter correct email ID")
+        document.getElementById("txtNote").innerHTML = "*Please enter the correct email format";
         validate =  false;
      }
      else if(checkEmail)
      {  
-        alert("email bi trung");
+        document.getElementById("txtNote").innerHTML = "*The email is already in use";
         validate =  false;
      }
     else if(document.getElementById("txtPassword").value == "")
     {
-        alert("chua nhap pass");
+        document.getElementById("txtNote").innerHTML = "*Please enter your password";
         validate =  false;
     }
     else if(!validate_pasword.test(document.getElementById("txtPassword").value))
     {
-        alert("nhap sai dinh dang");
+        document.getElementById("txtNote").innerHTML = "*Please enter the correct password format";
         validate =  false;
     }
     else if(document.getElementById("txtConfirmPassword").value == "")
     {
-        alert("chua nhap confrom pass");
+        document.getElementById("txtNote").innerHTML = "*Please enter confirm password";
         validate =  false;
     }
     
     else if(document.getElementById("txtPassword").value != document.getElementById("txtConfirmPassword").value)
     {
-        alert("Sai confrom pass");
+        document.getElementById("txtNote").innerHTML = "*The confirm password is not valid";
         validate =  false;
     }
     else if(usr_input != captcha.innerHTML)
     {
         validate =  false;
-        alert("Sai capcha");
+        document.getElementById("txtNote").innerHTML = "*The captcha is not valid";
         generate();
         document.getElementById("captcha-form").value = '';
     }
@@ -132,20 +159,20 @@ function checkValidate() {
     {
         validate = true;
     }
-      }, 1000);
+      }, 1500);
     
 }
 function addNew(newHuman) {
     axios.post(URL , newHuman).then((response) =>{
         var result = response.data;
         if(result){
-            alert('Tao thanh cong');
             generate();
             clearTextboxes();
             window.location.href = "../html/index.html ";
         }else
         {
-            alert('SORRY BABY !');
+            clearTextboxes();
+            alert('Error! An error occurred. Please try again later');
         }   
     });
 }
@@ -155,6 +182,7 @@ function clearTextboxes()
     document.getElementById("txtPassword").value = '';
     document.getElementById("txtConfirmPassword").value = '';
     document.getElementById("captcha-form").value = '';
+    document.getElementById("txtNote").innerHTML = "";
 }
 function searchByEmail() {
     replace_email = document.getElementById("txtEmail").value.replace('.',',');
@@ -170,10 +198,10 @@ function searchByEmail() {
         }
     });
     setTimeout(() => {
-        if (count === 1)
+        if (count >= 1)
     {
         checkEmail = true;
     }
     else checkEmail =  false;
-      }, 1000);
+      }, 1500);
 }

@@ -16,18 +16,17 @@ function searchByEmail() {
             {
                 if(human.Pass === document.getElementById("txtSignInPassword").value)
                 {
-                    alert("dn thanh cong");
                     clear();
                     window.location.href = "../html/home.html ";
                 }
                 else
                 {
-                    alert("Nhap sai mat khau");
+                    document.getElementById("txtSignInNote").innerHTML = "*Wrong email or password";
                 }
             }
             else
             {
-                alert("Nhap sai Email");
+                document.getElementById("txtSignInNote").innerHTML = "*Wrong email or password";
             }
         }
     });

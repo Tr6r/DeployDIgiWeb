@@ -2,6 +2,7 @@
 <html>
     <head>
         <link rel="stylesheet" href="../css/style.css">
+        <link rel="stylesheet" href="../css/aboutUs.css">
         <link rel="stylesheet" href="../js/server.js">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" >
@@ -15,14 +16,14 @@
         <header class="p-3 mb-3 border-bottom">
           <div class="container">
             <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-              <a href="../html/devices.html" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none">
+              <a href="../html/devicesHome.html" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none">
                 <h2>DIGI</h2>
               </a>
       
               <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0"> 
-                <li><a href="../html/devices.html" class="nav-link px-2 link-dark">Home</a></li>
+                <li><a href="../html/devicesHome.html" class="nav-link px-2 link-dark">Home</a></li>
                 <li><a href="../html/contact.html" class="nav-link px-2 link-secondary">Contact</a></li>
-                <li><a href="../html/devices.html" class="nav-link px-2 link-dark">Devices</a></li>
+                <li><a href="../html/info.html" class="nav-link px-2 link-dark">Devices</a></li>
               </ul>
       
               <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
@@ -131,24 +132,23 @@
 
         <section class="footer-section" style="background-color: rgb(247, 247, 247);">
           <div class="container">
-            <div class="row" >
-                <div class="col-md-4">
-                    <b>DIGI Company</b>
-                    <ul>
-                      <li><i class="fa-solid fa-envelope"></i>info@gmail.com</li><br>
-                      <li><i class="fa-solid fa-phone"></i>028.12345678</li><br>
-                      <li><i class="fa-solid fa-location-dot small-icon"></i></i>123 ABC, P.12, Q.Tan Binh, TP.HCM</li>
-                    </ul>
+            <div class="row">
+              <div class="col col-md-6">
+                <div class="footerLeft">
+                  <b>DIGI Company</b>
+                  <ul>
+                    <li><i class="fa-solid fa-envelope"></i>info@gmail.com</li><br>
+                    <li><i class="fa-solid fa-phone"></i>028.12345678</li><br>
+                    <li><i class="fa-solid fa-location-dot small-icon"></i></i>123 ABC, P.12, Q.Tan Binh, TP.HCM</li>
+                  </ul>
                 </div>
+              </div>
 
-                <div class="col-md-4">
-                  
-                </div>
-
-                <div class="col-md-4 review">
+              <div class="col col-md-6">
+                <div class="review">
                   <div class="form">
                     <form>
-                      <div class="col"><b>Review</b></div>
+                      <div class="col tittleReview"><b>Review</b></div>
                       <div class="col">
                         <textarea placeholder="Text here" wrap="soft"></textarea>
                       </div>
@@ -157,7 +157,8 @@
                       </div>
                     </form>
                   </div>
+                </div>
               </div>
-        </div> 
+           </div> 
         </section>
 </html>

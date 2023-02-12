@@ -2,6 +2,7 @@
 <html>
     <head>
         <link rel="stylesheet" href="../css/style.css">
+        <link rel="stylesheet" href="../css/login.css">
         <link rel="stylesheet" href="../js/server.js">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" >
@@ -37,7 +38,7 @@
             <h2>Login</h2>
             <div class="container">
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col">
                         <form>
                             <table >
                                 <tr style="padding: 10px;">
@@ -53,14 +54,16 @@
                                     <td><a href="../html/forgotPassword.html"><p>Forgot password</p></a></td>
                                 </tr>
                             </table>
-                            <!-- <div class="messegeErrLogin">
-                                <p id=""></p>
-                            </div> -->
+                            <div class="messegeErrLogin">
+                                <p id="txtSignInNote"></p>
+                            </div>
                             <button type="button" onclick="btnSignIn_Click()">Login</button>
                             <!-- <input class="btn-signUp" type="button" value="ADD NEW" onclick="printmsg()" /> -->
                         </form>
                     </div>
-                    <img src="../img/login.png" alt="Login photo">
+                    <div class="col img">
+                        <img src="../img/login.png" alt="Login photo">
+                    </div>
                 </div>
             </div>
         </div>

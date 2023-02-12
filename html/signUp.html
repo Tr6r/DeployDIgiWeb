@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="stylesheet" href="../css/signUp.css">
         <link rel="stylesheet" href="../css/style.css">
         <link rel="stylesheet" href="../js/server.js">
         <link rel="stylesheet" href="../js/captcha.js">
@@ -12,50 +13,56 @@
         <script src="../js/captcha.js"></script>
         <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
         <script src="../js/SignIn/signUp.js"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init("_5v3301hRA5j4LmV8");
+   })();
+</script>
     </head>
 
     <form action = "/cgi-bin/test.cgi" name = "myForm" onsubmit = "return(validate());"></form>
     
-    <body class="body-login" style="background-color: rgb(238, 238, 238);" onload="generate()">
+    <body class="body-login body-signUp" style="background-color: rgb(238, 238, 238);" onload="generate()">
         <style>
             @import url('https://fonts.googleapis.com/css2?family=Recursive&display=swap');
             
-/* The message box is shown when the user clicks on the password field */
-#message {
-  display:none;
-  background: #f1f1f1;
-  color: #000;
-  position: relative;
-  padding: 4cm;
-  margin-top: 10px;
-}
+            /* The message box is shown when the user clicks on the password field */
+            #message {
+              display:none;
+              background: #f1f1f1;
+              color: #000;
+              position: relative;
+              padding: 4cm;
+              margin-top: 10px;
+            }
 
-#message p {
-  padding: 10px 14px;
-  font-size: 14px;
-}
+            #message p {
+              padding: 10px 14px;
+              font-size: 14px;
+            }
 
-/* Add a green text color and a checkmark when the requirements are right */
-.valid {
-  color: green;
-}
+            /* Add a green text color and a checkmark when the requirements are right */
+            .valid {
+              color: green;
+            }
 
-.valid:before {
-  position: relative;
-  left: -35px;
-  content: "✔";
-}
+            .valid:before {
+              position: relative;
+              left: -35px;
+              content: "✔";
+            }
 
-/* Add a red text color and an "x" when the requirements are wrong */
-.invalid {
-  color: red;
-}
+            /* Add a red text color and an "x" when the requirements are wrong */
+            .invalid {
+              color: red;
+            }
 
-.invalid:before {
-  position: relative;
-  left: -35px;
-  content: "✖";
-}
+            .invalid:before {
+              position: relative;
+              left: -35px;
+              content: "✖";
+            }
         </style>
 
         <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
@@ -120,12 +127,9 @@
                                 <tr>
                                     <td class="tittle-option"  id="language" >Language</td>
                                     <td class="select-option" >
-                                        <select id="optLanguage">
-                                            <option>Vietnammes</option>
-                                            <option>English</option>
-                                            <option>Korean</option>
-                                            <option>Chinese</option>
-                                            <option>Thai</option>
+                                        <select id="optLanguage" class="opt-langluage">
+                                           <option><a href="#" language='vietnamese' class="vi"></a>Vietnammes</option>
+                                           <option> <a href="#" language='English' class="en"></a>English</option>
                                         </select>
                                     </td>
                                 </tr>
@@ -139,7 +143,7 @@
                                       </div>
                                       <div id="radio-btn-group">
                                         <input type="radio" id="second-account" name="acc" value="2" style="width: 15px; height: auto; margin-left: 5px;">
-                                        <label for="age1" style="font-size: 15px;margin: 3px;">Second account</label>
+                                        <label for="age1" style="font-size: 15px;margin: 3px;">Extra account</label>
                                       </div>
                                     </form>
                                   </td>
@@ -147,7 +151,8 @@
                                 
                                 <tr>
                                     <td class="title"  id="password" >Password</td>
-                                    <td><input class="input" type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,} " id="txtPassword" required></td>
+                                    <td><input class="input" type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,} " 
+                                      id="txtPassword" required></td>
                                 </tr>
                                   <td></td>
                                   <td>
@@ -181,11 +186,11 @@
                                     </td>
                                 </tr>
                             </table>
-                            <!-- <div class="messegeErr">
-                              <p id=""></p> -->
-                            <!-- </div> -->
+                            <div class="messegeErr">
+                              <p id="txtNote"></p>
+                             </div>
                             <!-- <a href="#"><button type="button" onclick="btnSignup_Click()" >Sign up</button></a> -->
-                            <input class="btn-signUp" type="button" value="ADD NEW" onclick="printmsg()" /> 
+                            <input class="btn-signUp" type="button" value="Sign up" onclick="printmsg()" /> 
                         </form>
                     </div>
                     <div class="col">
