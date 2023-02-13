@@ -1,21 +1,79 @@
 const URL = "https://digi27.azurewebsites.net/api/healthies";
+
 var replace_email;
 var count;
+var count_otp = 0;
+var Otp;
 var validate,checkEmail;
 var Hour;
 var OTP;
 const serviceID = "service_llvpnwi";
 const templateID = "template_njqzjob";
+
+function clickEvent(first,last){
+    if(first.value.length){
+      document.getElementById(last).focus();
+        count_otp ++;
+    }
+    if(count_otp === 6)
+    {
+        btnOTPSubmit();
+        count_otp = 0;
+    }
+  }
+function btnOTPSubmit()
+{
+    var date = new Date();
+    var month =date.getFullYear()+ "-" +(date.getMonth()+1) +"-" +(date.getDate());
+    var time = date.getHours()+":"+date.getMinutes()+":"+date.getSeconds();
+    var UID = generateUUID();
+    Hour_nose();
+    Otp = document.getElementById("ist").value
+    +document.getElementById("sec").value
+    +document.getElementById("third").value
+    +document.getElementById("fourth").value
+    +document.getElementById("fifth").value
+    +document.getElementById("sixth").value;
+    if (Otp === real_email)
+    {
+        var newHuman = {
+            UID: UID,
+            Email: replace_email,
+            Nation: document.getElementById("optNation").value,
+            Language:document.getElementById("optLanguage").value,
+            Hour_nose: Hour,
+            Pass: document.getElementById("txtPassword").value,
+            UID_Main_Account: null,
+            Is_Beneficiary_Account: "n",
+            Status: "chua kich hoat",
+            Purchase_Date: null,
+            Date:  month +" "+time,
+            Users: [],
+            User1: null
+        }
+          addNew(newHuman);
+    }
+    else
+    {
+        alert("sai otp");
+        document.getElementById("ist").value = "";
+    document.getElementById("sec").value = "";
+    document.getElementById("third").value = "";
+    document.getElementById("fourth").value = "";
+    document.getElementById("fifth").value = "";
+    document.getElementById("sixth").value = "";
+    document.getElementById("ist").value.focus();
+    }
+}
 function sendEmail()
 {
-    OTP = RandomOTP();
+    RandomOTP();
     var params = {
         name : "DigiTechnology",
         email: document.getElementById("txtEmail").value,
-        message : OTP,
+        message : real_email,
     }
     emailjs.send(serviceID,templateID,params).then((res) =>{
-        alert("Thanh cong");
     }) 
     .catch((err) => console.log(err));
 }
@@ -27,7 +85,8 @@ function RandomOTP() {
 		uniquechar += randomchar.charAt(
 			Math.random() * randomchar.length)
 	}
-	return uniquechar;
+    
+	real_email = uniquechar;
 }
 function generateUUID() { // Public Domain/MIT
     var d = new Date().getTime();//Timestamp
@@ -46,37 +105,16 @@ function generateUUID() { // Public Domain/MIT
 }   
 function printmsg()
 {
-    sendEmail();
-    searchByEmail();
-    var date = new Date();
-    var month =date.getFullYear()+ "-" +(date.getMonth()+1) +"-" +(date.getDate());
-    var time = date.getHours()+":"+date.getMinutes()+":"+date.getSeconds();
-    var UID = generateUUID();
-    Hour_nose();
     
-    
+    searchByEmail();    
     checkValidate();
     setTimeout(() => {
     
     if(validate)
-    {
-        var newHuman = {
-            UID: UID,
-            Email: replace_email,
-            Nation: document.getElementById("optNation").value,
-            Language:document.getElementById("optLanguage").value,
-            Hour_nose: Hour,
-            Pass: document.getElementById("txtPassword").value,
-            UID_Main_Account: null,
-            Is_Beneficiary_Account: "n",
-            Status: "chua kich hoat",
-            Purchase_Date: null,
-            Date:  month +" "+time,
-            Users: [],
-            User1: null
-        }
-
-        //  addNew(newHuman);
+    { 
+        sendEmail();
+        document.getElementById("cuong").style.display = "none";
+        document.getElementById("cuong1").style.display = "block";
     }
 }
       , 1500);
@@ -166,12 +204,9 @@ function addNew(newHuman) {
     axios.post(URL , newHuman).then((response) =>{
         var result = response.data;
         if(result){
-            generate();
-            clearTextboxes();
-            window.location.href = "../html/index.html ";
+            window.location.href = "../index.html ";
         }else
         {
-            clearTextboxes();
             alert('Error! An error occurred. Please try again later');
         }   
     });

@@ -3,28 +3,20 @@
     padding: 0;
     box-sizing:  border-box;
 }
-
-body{
-    background-image: linear-gradient(rgba(175, 37, 63,0.100),rgba(207, 155, 165,0.85)), url("../img/japan_street.jpg");
-    height: 75vh;
-    background-position: center;
-    background-size: cover;
-    background-attachment: fixed;
+  .contain{
     display:  flex;
+    flex-flow: column;
+    height: 100%;
+    align-items: space-around;
     justify-content: center;
-    align-items: center;
-    flex-direction:  column;
-}
-
-body h2{
-    color: #000000;
-}
-
-.otp-bx{
+  }
+  
+  .userInput{
     display: flex;
-}
-
-.otp-bx input{
+    justify-content: center;
+  }
+  
+  .userInput input{
     width: 50px;
     font-size: 32px;
     padding: 10px;
@@ -38,16 +30,19 @@ body h2{
     outline: none;
     transition: all 0.1s;
 }
+  .otp h1{
+    justify-content: center;
+    color: aliceblue    ;
+   
 
-.otp-bx input:focus{
-    border: 2px solid #B00020;
-    box-shadow: 0 0 2px 2px #C45166;
-}
-
-.space{
-    margin-right: 1rem !important;
-}
-
-.disabled{
-    opacity: 0.5;
-}
+  }
+  .space {
+    margin-right: 1.4rem ! important;
+  } 
+  .otp button{
+    justify-content: center;
+    background-color: #B00020;
+    width: 200px;
+    height: 30px;
+    border-radius: 20px;
+  }

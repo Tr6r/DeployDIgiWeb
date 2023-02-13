@@ -3,6 +3,7 @@
     <head>
         <link rel="stylesheet" href="../css/signUp.css">
         <link rel="stylesheet" href="../css/style.css">
+        <link rel="stylesheet" href="../css/otp.css">
         <link rel="stylesheet" href="../js/server.js">
         <link rel="stylesheet" href="../js/captcha.js">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -35,6 +36,13 @@
               position: relative;
               padding: 4cm;
               margin-top: 10px;
+            }
+            #cuong {
+              display:block;
+            }
+            
+            #cuong1 {
+              display:none;
             }
 
             #message p {
@@ -85,29 +93,13 @@
           </div>
         </header>
 
-        <div class="signUp-title">
+        <div id="cuong" class="signUp-title">
             <h2>Sign up</h2>
             <div class="container">
                 <div class="row">
                     <div class="col">
                         <form name="form1">
                             <table>
-                                <!-- <tr style="padding: 100px;">
-                                    <td class="title">Your name</td>
-                                    <td><input class="input" type="text" id="txtName" ></td>
-                                </tr> -->
-                                <!-- <tr style="padding: 20px;">
-                                    <td class="title">Last name</td>
-                                    <td><input class="input" type="text" id="txtLastName"></td>
-                                </tr> -->
-                                <!-- <tr>
-                                    <td class="title">Address</td>
-                                    <td><input class="input" type="text" id="txtAddress"></td>
-                                </tr> -->
-                                <!-- <tr>
-                                    <td class="title">Phone number</td>
-                                    <td><input class="input" type="text" id="txtPhone"></td>
-                                </tr> -->
                                 <tr>
                                     <td class="title"  id="email">Email</td>
                                     <td><input class="input" type="email" id="txtEmail" placeholder="Info@gmail.com" required></td>
@@ -138,7 +130,7 @@
                                   <td class="btn-group">
                                     <form action="/action_page.php" class="btn-radio-group" style="width: 200px;">
                                       <div id="radio-btn-group">
-                                        <input type="radio" id="main-account" name="acc" value="1" style="width: 15px; height: auto;">
+                                        <input type="radio" id="main-account" name="acc" value="1" style="width: 15px; height: auto;" checked>
                                         <label for="age1" style="font-size: 15px;margin: 3px;">Main account</label> 
                                       </div>
                                       <div id="radio-btn-group">
@@ -198,6 +190,18 @@
                     </div>
                 </div>
             </div>
+        </div>
+
+        <div id="cuong1" class="container">
+          <h1>ENTER OTP</h1>
+          <div class="userInput">
+            <input type="text" id='ist' maxlength="1" onkeyup="clickEvent(this,'sec')">
+            <input type="text" id="sec" maxlength="1" onkeyup="clickEvent(this,'third')">
+            <input type="text" id="third" maxlength="1" onkeyup="clickEvent(this,'fourth')" class="space" >
+            <input type="text" id="fourth" maxlength="1" onkeyup="clickEvent(this,'fifth')">
+            <input type="text" id="fifth" maxlength="1" onkeyup="clickEvent(this,'sixth')">
+            <input type= "text" id="sixth" maxlength="1" onkeyup="clickEvent(this,'sixth')">
+          </div>
         </div>
 
         <script>
