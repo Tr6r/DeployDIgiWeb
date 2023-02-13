@@ -220,7 +220,7 @@ function clearTextboxes()
     document.getElementById("txtNote").innerHTML = "";
 }
 function searchByEmail() {
-    replace_email = document.getElementById("txtEmail").value.replace(/./g, ',');
+    replace_email = document.getElementById("txtEmail").value.replace(/\./g,',');
     count = 0;
     axios.get(URL + "/SearchByEmail/"+replace_email).then((response) =>{
         var healthies = response.data;
