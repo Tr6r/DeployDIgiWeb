@@ -5,7 +5,7 @@ function btnSignIn_Click()
     searchByEmail();
 }
 function searchByEmail() {
-    replace_email = document.getElementById("txtSignInEmail").value.replace('.',',');
+    replace_email = document.getElementById("txtSignInEmail").value.replace(/\./g,',');
     count = 0;
     axios.get(URL + "/SearchByEmail/"+replace_email).then((response) =>{
         var healthies = response.data;
