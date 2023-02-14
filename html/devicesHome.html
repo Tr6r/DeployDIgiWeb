@@ -11,7 +11,7 @@
         <title>Website Demo</title>
 
 
-        <!-- <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
         <script type="text/javascript">
         google.charts.load('current', {'packages':['corechart']});
         google.charts.setOnLoadCallback(drawChart);
@@ -34,7 +34,7 @@
             var chart = new google.visualization.AreaChart(document.getElementById('chart_div'));
             chart.draw(data, options);
         }
-        </script> -->
+        </script>
     </head>
 
     <body>
@@ -72,7 +72,7 @@
           </div>
         </header>
 
-        <div class="header">
+        <!-- <div class="header">
             <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-indicators">
                   <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -111,7 +111,7 @@
                   <span class="visually-hidden">Next</span>
                 </button>
               </div>
-        </div>
+        </div> -->
 
         <!-- <section class="devices-section">
             <h2>Status</h2>
@@ -149,48 +149,10 @@
                         <p><b>Note:</b></p>
                       </div>
                   </div>
-                  
               </div> 
           </section> -->
 
-        <!-- <section class="dataDivices-section">
-            <h2>Data devices</h2>
-            <div class="container">
-                <div id="chart_div" style="width: auto; height: 500px; text-align: center;"></div>
-            </div>
-        </section>
 
-        <section class="footer-section">
-            <div class="container">
-              <div class="row" >
-                  <div class="col-3 col-md-4">
-                      <b>DIGI Company</b>
-                      <ul>
-                        <li><i class="fa-solid fa-envelope"></i>info@gmail.com</li><br>
-                        <li><i class="fa-solid fa-phone"></i>028.12345678</li><br>
-                        <li><i class="fa-solid fa-location-dot small-icon"></i></i>123 ABC, P.12, Q.Tan Binh, TP.HCM</li>
-                      </ul>
-                  </div>
-  
-                  <div class="col-md-4">
-                    
-                  </div>
-  
-                  <div class="col-md-4 review">
-                    <div class="form">
-                      <form>
-                        <div class="col"><b>Review</b></div>
-                        <div class="col">
-                          <textarea placeholder="Text here" wrap="soft"></textarea>
-                        </div>
-                        <div class="col btn-submit">
-                          <button class="submit" type="submit" >Sent</button>
-                        </div>
-                      </form>
-                    </div>
-                </div>
-          </div> 
-          </section> -->
 
           <section id="tableData" class="tableData">
             <h2>Status</h2>
@@ -260,19 +222,54 @@
                     </tr>
                   </tbody>
 
-                  <!-- <tr>
+                  <tr 
+                  id="coB" 
+                  data-bs-toggle="collapse" 
+                  href="#b" 
+                  aria-controls="b" 
+                  aria-expanded="false" 
+                  aria-colspan="b" 
+                  data-bs-parent="#coB">
                     <td>2</td>
                     <td>B</td>
                     <td>11/2/2023</td>
-                    <td>23:30</td>
-                    <td>-</td>
-                    <td>23/28 m/s</td>
-                    <td>24<sup>o</sup>C</td>
-                    <td>81<sup>o</sup>F</td>
-                    <td>11%</td>
-                    <td>West</td>
-                    <td>11/17 m/s</td>
-                  </tr> -->
+                    <td>22:18</td>
+                    <td>20<sup>o</sup>C</b></td>
+                    <td>84<sup>o</sup>F</b></td>
+                    <!-- <td></td>
+                    <td></td>
+                    <td></b></td>
+                    <td></td>
+                    <td></td> -->
+                  </tr>
+                  <thead id="b" class="collapse">
+                    <td></td>
+                    <td><b>Acceleration</b></td>
+                    <td style="width: 200px;"><b>Speed</b></td>
+                    <td><b>Pressure</b></td>
+                    <td style="width: 250px;"><b>Wind direction</b></td>
+                    <td style="width: 250px;"><b>Wind's speed</b></td>
+                  </thead>
+                  <tbody id="b" class="collapse">
+                    <tr>
+                      <td></td>
+                      <td>24%</td>
+                      <td>30/35 m/s</td>
+                      <td>12%</b></td>
+                      <td>North</td>
+                      <td>16/17 m/s</td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td>-</td>
+                      <td>23/28 m/s</td>
+                      <td>11%</td>
+                      <td>West</td>
+                      <td>11/17 m/s</td>
+                    </tr>
+                  </tbody>
+
+                  
                 </tbody>
               </table>
 
@@ -302,7 +299,14 @@
             </script>
           </section>
 
-          <section class="footer-section" style="background-color: rgb(247, 247, 247);">
+          <section class="dataDivices-section">
+            <h2>Data devices</h2>
+            <div class="container">
+                <div id="chart_div" style="width: auto; height: 500px; text-align: center;"></div>
+            </div>
+        </section>
+
+          <!-- <section class="footer-section" style="background-color: rgb(247, 247, 247);">
             <div class="container">
               <div class="row">
                 <div class="col col-md-6">
@@ -332,6 +336,6 @@
                   </div>
                 </div>
              </div> 
-          </section>
+          </section> -->
     </body>
 </html>

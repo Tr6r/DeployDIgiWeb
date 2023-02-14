@@ -9,9 +9,9 @@
     background-color: rgb(238, 238, 238); */
 }
 
-.container{
+/* .container{
     margin-bottom: 50px;
-}
+} */
 
 .signUp-title h2{
     /* color: rgb(228, 80, 107); */
@@ -21,7 +21,7 @@
     letter-spacing: 5px;
     font-style: italic;
     margin-top: 20px;
-    margin-bottom: 200px;
+    margin-bottom: 100px;
 }
 
 .signUp-title .col{
@@ -60,6 +60,7 @@
     border-radius: 20px;
     border: solid 1px rgb(196, 81, 102);
     font-size: 22px;
+    outline: none;
 }
 
 .signUp-title form tr>td.select-option>select{
@@ -81,6 +82,7 @@
     border-radius: 20px;
     border: solid 1px rgb(196, 81, 102);
     font-size: 22px;
+    outline: none;
 }
 
 .signUp-title img{
@@ -153,6 +155,7 @@
     padding-left: 12px;
     margin-right: 2px;
     border: solid 1px rgb(196, 81, 102);
+    outline: none;
 }
 
 .signUp-title form .captcha .captcha-form .captcha-refresh{
@@ -168,7 +171,16 @@
     font-size: 22px;
 }
 
+.signUp-title .messegeErr #txtNote{
+    justify-content: center;
+}
+
 .signUp-title form .btn-siup{
     display: flex;
     justify-content: center;
 }
+
+.signUp-title form .btn-siup:hover{
+    transform: scale(1.1);
+}
+

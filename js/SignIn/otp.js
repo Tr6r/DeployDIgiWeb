@@ -2,7 +2,6 @@
 function page_Load()
 {
     sendEmail();
-
 }
 function sendEmail()
 {
