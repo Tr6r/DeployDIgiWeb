@@ -10,30 +10,52 @@
 }
 
 .signUp-title h2{
-    color: rgb(176, 0, 32);
+    /* color: rgb(228, 80, 107); */
+    color: rgb(31, 31, 31);
     text-align: center;
     font-size: 70px;
+    letter-spacing: 5px;
+    font-style: italic;
+    margin-top: 20px;
+    margin-bottom: 200px;
+}
+
+.signUp-title .col{
+    display: flex;
+    justify-content: center;
 }
 
 .signUp-title table{
     height: auto;
-    width: 540px;
+    width: 550px;
 }
 
 .signUp-title table td,tr{
     padding: 5px;
 }
 
+.signUp-title .lf-form{
+    background: rgba(211, 211, 211, 0.5);
+    border-radius: 20px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
 .signUp-title .title{
     width: 190px;
     text-align: right;
     padding-right: 20px;
+    font-size: 20px;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
 }
 
 .signUp-title form tr>td.tittle-option{
     width: 190px;
     text-align: right;
     padding-right: 20px;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
 }
 
 .signUp-title form tr>td.select-option>select{
@@ -48,8 +70,8 @@
  
 .losignUp-title form{
     justify-items: center;
-    margin-top: 20px;
-    margin: 50px;
+    /* margin-top: 20px;
+    margin: 50px; */
 }
 
 .signUp-title .input{
@@ -63,35 +85,27 @@
 }
 
 .signUp-title img{
-    height: 400px;
-    width: 420px;
-    float: right;
-    margin-right: 30%;
+    height: 420px;
+    width: 410px;
     transform: rotate(45deg);
+}
+
+.signUp-title .img-siup{
+    justify-content: center;
 }
 
 .signUp-title .container{
     margin-top: 120px;
 }
 
-/* .signUp-title button{
-    width: 430px;
+.signUp-title form input.btn-signUp{
+    width: 70%;
     border-radius: 20px;
     background-color: rgb(167, 48, 69);
     margin-top: 20px;
     border: none;
     color: white;
-    margin-bottom: 50px;
-} */
-
-.signUp-title form>input.btn-signUp{
-    width: 430px;
-    border-radius: 20px;
-    background-color: rgb(167, 48, 69);
-    margin-top: 20px;
-    border: none;
-    color: white;
-    margin-bottom: 100px;
+    /* margin-bottom: 100px; */
 }
 
 .signUp-title button:hover{
@@ -149,4 +163,9 @@
     border-radius: 50px;
     margin-left: -42px;
     background-color: rgb(255, 255, 255);
+}
+
+.signUp-title form .btn-siup{
+    display: flex;
+    justify-content: center;
 }

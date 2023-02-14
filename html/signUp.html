@@ -31,7 +31,7 @@
             /* The message box is shown when the user clicks on the password field */
             #message {
               display:none;
-              background: #f1f1f1;
+              background: transparent;
               color: #000;
               position: relative;
               padding: 4cm;
@@ -52,7 +52,7 @@
 
             /* Add a green text color and a checkmark when the requirements are right */
             .valid {
-              color: green;
+              color: rgb(0, 165, 0);
             }
 
             .valid:before {
@@ -63,7 +63,7 @@
 
             /* Add a red text color and an "x" when the requirements are wrong */
             .invalid {
-              color: red;
+              color: rgb(176, 0, 32);
             }
 
             .invalid:before {
@@ -86,8 +86,8 @@
               </ul>
       
               <div class="text-end">
-                  <a href="../index.html "><button type="button" class="btn btn-outline-primary me-2">Login</button></a>
-                  <a href="../html/signUp.html "><button type="button" class="btn btn-primary">Sign-up</button></a>           
+                  <a href="../index.html "><button type="button" class="btn btn-outline-light me-2">Login</button></a>
+                  <a href="../html/signUp.html "><button type="button" class="btn btn-light">Sign-up</button></a>           
               </div>
             </div>
           </div>
@@ -97,7 +97,7 @@
             <h2>Sign up</h2>
             <div class="container">
                 <div class="row">
-                    <div class="col">
+                    <div class="col lf-form">
                         <form name="form1">
                             <table>
                                 <tr>
@@ -158,7 +158,7 @@
                                   </td>
                                     
                                 <tr>
-                                    <td class="title"  id="confirm">Confirm password</td>
+                                    <td class="title"  id="confirm" style="width: 200px;">Confirm password</td>
                                     <td><input class="input" type="password"  id="txtConfirmPassword" required></td>
                                 </tr>
                                 <tr>
@@ -178,16 +178,20 @@
                                     </td>
                                 </tr>
                             </table>
+
                             <div class="messegeErr">
                               <p id="txtNote"></p>
                              </div>
-                            <!-- <a href="#"><button type="button" onclick="btnSignup_Click()" >Sign up</button></a> -->
-                            <input class="btn-signUp" type="button" value="Sign up" onclick="printmsg()" /> 
+
+                             <div class="btn-siup">
+                               <!-- <a href="#"><button type="button" onclick="btnSignup_Click()" >Sign up</button></a> -->
+                              <input class="btn-signUp" type="button" value="Sign up" onclick="printmsg()" /> 
+                             </div>
                         </form>
                     </div>
-                    <div class="col">
-                        <img src="../img/signUp.png" alt="Login photo">
-                    </div>
+                    <div class="col img-siup">
+                      <img src="../img/signUp.png" alt="Login photo">
+                  </div>
                 </div>
             </div>
         </div>
@@ -205,10 +209,6 @@
         </div>
 
         <script>
-         
-        </script>
-
-        <script>
           var myInput = document.getElementById("txtPassword");
           var letter = document.getElementById("letter");
           var capital = document.getElementById("capital");
@@ -218,7 +218,7 @@
           // When the user clicks on the password field, show the message box
           myInput.onfocus = function() {
             document.getElementById("message").style.display = "block";
-            document.getElementById("message").style.backgroundColor = "rgb(238, 238, 238)";
+            // document.getElementById("message").style.backgroundColor = "rgb(238, 238, 238)";
             document.getElementById("message").style.padding ="0px";
 
             document.getElementById("letter").style.fontSize = "16px";
