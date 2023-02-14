@@ -9,6 +9,10 @@
     background-color: rgb(238, 238, 238); */
 }
 
+.container{
+    margin-bottom: 50px;
+}
+
 .signUp-title h2{
     /* color: rgb(228, 80, 107); */
     color: rgb(31, 31, 31);
@@ -27,25 +31,18 @@
 
 .signUp-title table{
     height: auto;
-    width: 550px;
+    width: 600px;
 }
 
 .signUp-title table td,tr{
     padding: 5px;
 }
 
-.signUp-title .lf-form{
-    background: rgba(211, 211, 211, 0.5);
-    border-radius: 20px;
-    padding-top: 50px;
-    padding-bottom: 50px;
-}
-
 .signUp-title .title{
     width: 190px;
     text-align: right;
     padding-right: 20px;
-    font-size: 20px;
+    font-size: 22px;
     color: rgb(0, 0, 0);
     font-weight: bold;
 }
@@ -59,17 +56,22 @@
 }
 
 .signUp-title form tr>td.select-option>select{
-    width: 240px;
+    width: 263px;
     border-radius: 20px;
     border: solid 1px rgb(196, 81, 102);
+    font-size: 22px;
 }
 
 .signUp-title form tr>td.select-option>select{
     padding: 0px 5px;
 }
  
-.losignUp-title form{
-    justify-items: center;
+.signUp-title form{
+    background: rgba(211, 211, 211, 0.5);
+    border-radius: 20px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    /* justify-items: center; */
     /* margin-top: 20px;
     margin: 50px; */
 }
@@ -78,16 +80,14 @@
     padding-left: 12px;
     border-radius: 20px;
     border: solid 1px rgb(196, 81, 102);
-}
-
-.signUp-title form>table .btn-group .btn-radio-group label{
-    font-size: 5px;
+    font-size: 22px;
 }
 
 .signUp-title img{
     height: 420px;
     width: 410px;
-    transform: rotate(45deg);
+    transform: rotate(-40deg);
+    margin-bottom: 50px;
 }
 
 .signUp-title .img-siup{
@@ -108,6 +108,7 @@
     color: white;
     /* margin-bottom: 100px; */
 }
+
 
 .signUp-title button:hover{
     transform: scale(1.1);
@@ -146,7 +147,7 @@
 }
 
 .signUp-title form .captcha .captcha-form input{
-    width: 240px;
+    width: 260px;
     border-radius: 20px;
     border: none;
     padding-left: 12px;
@@ -164,6 +165,7 @@
     border-radius: 50px;
     margin-left: -42px;
     background-color: rgb(255, 255, 255);
+    font-size: 22px;
 }
 
 .signUp-title form .btn-siup{

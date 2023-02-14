@@ -17,6 +17,7 @@ function searchByEmail() {
                 if(human.Pass === document.getElementById("txtSignInPassword").value)
                 {
                     clear();
+                    sessionStorage.setItem('email', replace_email);
                     window.location.href = "../html/devicesHome.html ";
                 }
                 else
